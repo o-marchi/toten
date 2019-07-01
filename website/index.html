@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toten</title>
+
+    <link rel="stylesheet" href="./background-color.css">
+    <link rel="stylesheet" href="./font-color.css">
+    <script src="./toten-name.js"></script>
+
+    <style>
+        body, html, #app {
+            margin: 0;
+            height: 100%;
+        }
+
+        #app {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: normal;
+            font-size: 10vw;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="app">
+        <h1></h1>
+    </div>
+
+    <script>
+        document.getElementsByTagName('h1')[0].innerText = name;
+        document.title = `Toten: ${name}`;
+    </script>
+</body>
+</html>
