@@ -7,7 +7,7 @@ defmodule Toten.Server do
     end
 
     def connect_central do
-        Node.connect(:"central@127.0.0.1")
+        Node.connect(:"central@ec2-54-175-72-195.compute-1.amazonaws.com")
     end
     
     def new_command(command, arg) do
