@@ -1,1 +1,1 @@
-var name = 'Super Luigi';
+var name = 'New Toten';

@@ -14,12 +14,14 @@ defmodule Toten.Server do
         IO.puts("Incoming message: #{inspect command} : #{inspect arg}")
 
         case command do
-            :font ->
+            :change_font_color ->
                 Toten.Server.change_font_color(arg)
-            :background ->
+            :change_background_color ->
                 Toten.Server.change_background_color(arg)
-            :name ->
+            :change_toten_name ->
                 Toten.Server.change_toten_name(arg)
+            :turn_off ->
+                Toten.Server.turn_off
         end
     end
 
@@ -36,6 +38,10 @@ defmodule Toten.Server do
     def change_toten_name(name) do
         path = Toten.Server.get_website_filepath("toten-name.js")
         File.write(path, "var name = '#{name}';")
+    end
+
+    def turn_off do
+        System.cmd("cmd.exe", ["/c", "SHUTDOWN", "-r", "-t", "0"])
     end
 
     def get_website_filepath(file) do
